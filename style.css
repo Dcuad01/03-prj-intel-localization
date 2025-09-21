@@ -1,0 +1,146 @@
+/* Base */
+img { max-width: 100%; height: auto; }
+
+/* Fluid, accessible typography and layout scaling */
+html {
+  font-size: clamp(14px, calc(0.9vw + 10px), 18px);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body { line-height: 1.6; }
+
+/* Headings scale fluidly and wrap on very narrow screens */
+h1 { font-size: clamp(1.75rem, 2vw + 1.25rem, 3rem); overflow-wrap: anywhere; }
+h2 { font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem); overflow-wrap: anywhere; }
+h3 { font-size: clamp(1.1rem, 1vw + 0.85rem, 1.5rem); overflow-wrap: anywhere; }
+
+/* Hero (header) – fluid spacing and logo sizing */
+header {
+  background: radial-gradient(120% 120% at 100% 0%, #0071c5 0%, #003c71 60%, #002b5c 100%);
+  color: #fff;
+  padding-block: clamp(2rem, 4vw + 1rem, 5rem);
+  padding-inline: 1rem;
+  text-align: center;
+}
+header img { max-height: clamp(40px, 6vw, 72px); }
+header h1 { font-weight: 700; margin-bottom: 0.5rem; }
+header p {
+  max-width: 60ch;
+  margin-inline: auto;
+  opacity: 0.95;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+}
+
+/* Timeline: flex + responsive + snap */
+/* Target the first content section after header as the timeline container */
+body > header + section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  padding: 1rem;
+}
+body > header + section > div {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  contain: layout paint; /* prevent layout shifts when inner content scrolls */
+}
+body > header + section > div img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-block: 0.5rem 0.75rem;
+}
+body > header + section > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* Reveal more details on hover: clamp text by default, expand on hover */
+body > header + section > div p {
+  position: relative;
+  /* keep a stable, fluid height so the card doesn't grow */
+  max-height: clamp(5.5em, 9vh, 10.5em);
+  overflow: hidden auto; /* x hidden, y auto (scroll only if needed) */
+  margin-bottom: 0;
+}
+body > header + section > div p::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2.4em;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  pointer-events: none;
+}
+/* On hover, allow scrolling but keep height the same (no push-down) */
+body > header + section > div:hover p {
+  overflow-y: auto;          /* enable internal scroll */
+  /* max-height stays the same to prevent layout shift */
+}
+body > header + section > div:hover p::after { opacity: 0; }
+
+/* Subtle paragraph scrollbar */
+body > header + section > div p::-webkit-scrollbar { width: 8px; }
+body > header + section > div p::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+body > header + section > div p:hover::-webkit-scrollbar-thumb { background: #94a3b8; }
+
+/* Horizontal on md+: ensure equal stretch for a neat row */
+@media (min-width: 768px) {
+  body > header + section {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    padding: 1rem 1.5rem;
+    align-items: stretch;
+  }
+  body > header + section > div {
+    flex: 0 0 auto;
+    width: clamp(260px, 28vw, 360px);
+    scroll-snap-align: start;
+  }
+  body[dir="ltr"] > header + section { scroll-padding-left: 1.5rem; }
+  body[dir="rtl"] > header + section { scroll-padding-right: 1.5rem; }
+
+  /* nicer scrollbar */
+  body > header + section::-webkit-scrollbar { height: 10px; }
+  body > header + section::-webkit-scrollbar-track { background: #f1f3f5; border-radius: 999px; }
+  body > header + section::-webkit-scrollbar-thumb { background: #b6c5d6; border-radius: 999px; }
+  body > header + section:hover::-webkit-scrollbar-thumb { background: #7aa6d1; }
+}
+
+/* New Bootstrap 3-column section tweaks */
+.rtl-card .card-title i { font-size: 1.25rem; }
+.rtl-card { transition: transform 0.15s ease-in-out; }
+.rtl-card:hover { transform: translateY(-2px); }
+
+/* "Learn More" links */
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--bs-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.learn-more:hover,
+.learn-more:focus { color: var(--bs-primary); border-bottom-color: currentColor; }
+
+/* Strong focus ring for a11y */
+:focus-visible { outline: 2px solid var(--bs-primary); outline-offset: 2px; }
+
+/* Footer links */
+footer .nav-link { color: #0d6efd; }
+footer .nav-link:hover,
+footer .nav-link:focus { color: #0a58ca; text-decoration: underline; }
+footer .text-muted { color: #495057 !important; }

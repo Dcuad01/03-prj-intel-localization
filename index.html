@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Bootstrap RTL + LTR (auto-toggled by script) -->
+  <link rel="stylesheet" id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" id="bootstrap-ltr" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" disabled>
+  <!-- Icons + local styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -32,7 +37,7 @@
     <div>
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Placeholder Image" />
+      <img src="img/1.jpg" alt="Founders Robert Noyce and Gordon Moore establish Intel" />
       <p>
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
@@ -44,7 +49,7 @@
     <div>
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Placeholder Image" />
+      <img src="img/2.jpg" alt="Intel 4004 microprocessor close-up" />
       <p>
         Intel debuts the 4004, the world's first commercial microprocessor, 
         igniting the microprocessor revolution and propelling the future 
@@ -56,7 +61,7 @@
     <div>
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Placeholder Image" />
+      <img src="img/3.jpg" alt="Intel 8086 CPU representing x86 architecture" />
       <p>
         Launch of the 8086 processor, establishing the x86 architecture 
         that drives countless PCs and servers in the modern era.
@@ -67,7 +72,7 @@
     <div>
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Placeholder Image" />
+      <img src="img/4.jpg" alt="Intel 386 processor symbolizing 32-bit era" />
       <p>
         Intel introduces the 386 processor with 32-bit architecture, 
         ushering in a new era of performance and multitasking for 
@@ -79,7 +84,7 @@
     <div>
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="https://images.unsplash.com/photo-1502301197179-65228ab57f78?auto=format&fit=crop&w=1000&q=60" alt="Industrial facility highlighting emissions challenge" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
@@ -92,7 +97,7 @@
     <div>
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="https://images.unsplash.com/photo-1531973968078-9bb02785f13d?auto=format&fit=crop&w=1000&q=60" alt="Sustainability strategy concept with teamwork" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
@@ -104,7 +109,7 @@
     <div>
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1000&q=60" alt="Wind turbines illustrating net‑zero commitments" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
@@ -116,7 +121,7 @@
     <div>
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1000&q=60" alt="Solar panels representing renewable electricity" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
@@ -128,12 +133,96 @@
     <div>
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=60" alt="Conference audience at a sustainability summit" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
         next-generation sustainable semiconductor manufacturing.
       </p>
+    </div>
+  </section>
+
+  <!-- New RTL Bootstrap 3-Column Section -->
+  <section class="container my-5" aria-labelledby="rtl-grid-title">
+    <h2 id="rtl-grid-title" class="mb-4 text-center">Explore Our Sustainability Focus</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm rtl-card">
+          <div class="card-body">
+            <h3 class="h5 card-title d-flex align-items-center gap-2">
+              <i class="bi bi-bullseye text-primary" aria-hidden="true"></i>
+              RISE Strategy
+            </h3>
+            <p class="card-text">
+              Ambitious 2030 goals to advance responsibility, inclusion, sustainability, and enablement across the industry.
+            </p>
+            <a
+              href="#"
+              class="learn-more"
+              aria-label="Learn more about the RISE Strategy"
+              data-bs-toggle="modal"
+              data-bs-target="#learnMoreModal"
+              data-title="RISE Strategy"
+              data-body="Ambitious 2030 goals to advance responsibility, inclusion, sustainability, and enablement across the industry."
+            >
+              Learn More
+              <i class="bi bi-arrow-left-short dir-aware-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm rtl-card">
+          <div class="card-body">
+            <h3 class="h5 card-title d-flex align-items-center gap-2">
+              <i class="bi bi-lightning-charge text-primary" aria-hidden="true"></i>
+              Commitment
+            </h3>
+            <p class="card-text">
+              Net-zero (Scope 1 and 2) by 2040, building on decades of environmental leadership and partnerships.
+            </p>
+            <a
+              href="#"
+              class="learn-more"
+              aria-label="Learn more about Intel’s net-zero commitment"
+              data-bs-toggle="modal"
+              data-bs-target="#learnMoreModal"
+              data-title="Net-zero Commitment"
+              data-body="Net-zero (Scope 1 and 2) by 2040, building on decades of environmental leadership and partnerships."
+            >
+              Learn More
+              <i class="bi bi-arrow-left-short dir-aware-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm rtl-card">
+          <div class="card-body">
+            <h3 class="h5 card-title d-flex align-items-center gap-2">
+              <i class="bi bi-droplet-half text-primary" aria-hidden="true"></i>
+              Water &amp; Waste
+            </h3>
+            <p class="card-text">
+              Conserving water, restoring watersheds, and promoting circularity through upcycling and recycling.
+            </p>
+            <a
+              href="#"
+              class="learn-more"
+              aria-label="Learn more about Intel’s water and waste initiatives"
+              data-bs-toggle="modal"
+              data-bs-target="#learnMoreModal"
+              data-title="Water & Waste"
+              data-body="Conserving water, restoring watersheds, and promoting circularity through upcycling and recycling."
+            >
+              Learn More
+              <i class="bi bi-arrow-left-short dir-aware-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -183,9 +272,153 @@
   </section>
 
   <!-- Subscription Form -->
-  <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
+  <section class="container my-5" aria-labelledby="subscribe-title">
+    <h2 id="subscribe-title" class="mb-4 text-center">Subscribe to our Newsletter</h2>
+    <form class="mx-auto" style="max-width: 600px;" aria-describedby="subscribe-helper">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          class="form-control" 
+          placeholder="name@example.com" 
+          required 
+          autocomplete="email" 
+          aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We’ll send updates about Intel’s sustainability initiatives.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="locale" class="form-label">Preferred language</label>
+        <select id="locale" name="locale" class="form-select" aria-label="Select preferred language">
+          <option value="ar" selected>العربية</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="1" id="consent" required>
+        <label class="form-check-label" for="consent">
+          I agree to receive Intel sustainability news and communications.
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+
+      <p id="subscribe-helper" class="form-text mt-2">
+        You can unsubscribe at any time. We respect your privacy.
+      </p>
+    </form>
   </section>
+
+  <!-- Footer -->
+  <footer class="border-top py-4 mt-5">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between gap-3">
+      <p class="mb-0 text-muted">&copy; 2025 Intel Corporation</p>
+      <nav aria-label="Footer">
+        <ul class="nav gap-3">
+          <li class="nav-item"><a class="nav-link p-0" href="#">Privacy Policy</a></li>
+          <li class="nav-item"><a class="nav-link p-0" href="#">Terms of Use</a></li>
+          <li class="nav-item"><a class="nav-link p-0" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Reusable Learn More Modal -->
+  <div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="learnMoreModalLabel" class="modal-title h5">Details</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="learnMoreModalBody">
+          <!-- Filled dynamically -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Dir auto-switch + modal content script -->
+  <script>
+    // Debounce helper
+    const debounce = (fn, delay = 200) => {
+      let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), delay); };
+    };
+
+    // Languages that should render RTL
+    const rtlLangs = ['ar', 'he', 'fa', 'ur', 'ps', 'dv', 'ku', 'ckb'];
+    const isRTLLang = (lang = '') => {
+      const code = lang.toLowerCase();
+      return rtlLangs.some(l => code === l || code.startsWith(l + '-'));
+    };
+
+    // Heuristic: detect RTL by scanning Unicode ranges (Arabic/Hebrew)
+    const contentLooksRTL = () => {
+      const text = document.body?.innerText || '';
+      return /[\u0590-\u05FF\u0600-\u06FF]/.test(text);
+    };
+
+    // Apply direction and sync arrow icons
+    const applyDirection = (rtl) => {
+      const html = document.documentElement;
+      const newDir = rtl ? 'rtl' : 'ltr';
+      if (html.getAttribute('dir') !== newDir) html.setAttribute('dir', newDir);
+
+      // Flip arrow icons
+      document.querySelectorAll('.dir-aware-arrow').forEach(icon => {
+        icon.classList.toggle('bi-arrow-left-short', rtl);
+        icon.classList.toggle('bi-arrow-right-short', !rtl);
+        icon.setAttribute('aria-hidden', 'true');
+      });
+
+      // Toggle Bootstrap stylesheets (ensure correct logical properties)
+      const rtlLink = document.getElementById('bootstrap-rtl');
+      const ltrLink = document.getElementById('bootstrap-ltr');
+      if (rtlLink && ltrLink) {
+        rtlLink.disabled = !rtl;
+        ltrLink.disabled = rtl;
+      }
+    };
+
+    // Decide and apply direction from lang or content
+    const updateDirectionAuto = () => {
+      const lang = document.documentElement.lang || navigator.language || '';
+      const rtl = isRTLLang(lang) || contentLooksRTL();
+      applyDirection(rtl);
+    };
+
+    // Observe lang attribute and DOM mutations (e.g., Google Translate)
+    const observer = new MutationObserver(debounce(updateDirectionAuto, 250));
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang', 'dir'] });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Initial run
+    updateDirectionAuto();
+
+    // Optional: react to browser languagechange if fired
+    window.addEventListener?.('languagechange', updateDirectionAuto);
+
+    // Modal: populate content from data attributes
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.learn-more[data-bs-toggle="modal"]');
+      if (!trigger) return;
+      const title = trigger.getAttribute('data-title') || 'Details';
+      const body = trigger.getAttribute('data-body') || '';
+      const titleEl = document.getElementById('learnMoreModalLabel');
+      const bodyEl = document.getElementById('learnMoreModalBody');
+      if (titleEl) titleEl.textContent = title;
+      if (bodyEl) bodyEl.textContent = body;
+    });
+  </script>
 </body>
 </html>
