@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -292,8 +292,8 @@
       <div class="mb-3">
         <label for="locale" class="form-label">Preferred language</label>
         <select id="locale" name="locale" class="form-select" aria-label="Select preferred language">
-          <option value="ar" selected>العربية</option>
-          <option value="en">English</option>
+          <option value="ar">العربية</option>
+          <option value="en" selected>English</option>
           <option value="fr">Français</option>
         </select>
       </div>
@@ -418,6 +418,22 @@
       const bodyEl = document.getElementById('learnMoreModalBody');
       if (titleEl) titleEl.textContent = title;
       if (bodyEl) bodyEl.textContent = body;
+    });
+
+    // Hook the language selector to change document language and direction
+    document.addEventListener('DOMContentLoaded', () => {
+      const sel = document.getElementById('locale');
+      if (!sel) return;
+
+      // Initialize the select to match current <html lang>
+      const current = (document.documentElement.lang || '').toLowerCase();
+      if ([...sel.options].some(o => o.value === current)) sel.value = current;
+
+      sel.addEventListener('change', () => {
+        const lang = sel.value;
+        document.documentElement.lang = lang;  // mutation observer will also react
+        updateDirectionAuto();                 // ensure immediate update
+      });
     });
   </script>
 </body>
